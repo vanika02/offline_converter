@@ -7,11 +7,11 @@ import os
 # img.save("out.pdf", save_all=True)
 
 # storing image path
-img_path = r"c:\Users\Prans\Downloads\img.jpeg"
+img_path = "/mnt/c/Users/Prans/Downloads/img.jpeg"
 # print(img_path)
 
 # storing pdf path
-pdf_path = r"c:\Users\Prans\Downloads\imgz.pdf"
+pdf_path = "/mnt/c/Users/Prans/Downloads/imgzz.pdf"
 
 # opening image
 image = Image.open(img_path)
