@@ -1,6 +1,6 @@
 from PIL import Image
 import img2pdf
-import os
+# import os
 
 def convert_image_to_pdf(img_path, pdf_path):
     image = Image.open(img_path)
