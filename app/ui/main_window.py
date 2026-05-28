@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtWidgets import QApplication, QLabel, QPushButton
+from PySide6.QtWidgets import QApplication, QMainWindow,  QLabel, QPushButton
 from PySide6.QtCore import Slot
 
 
@@ -8,14 +8,28 @@ from PySide6.QtCore import Slot
 def say_hello():
     print("Button clicked, wasssuppp")
 
+
+
+# creating a class main window to start the application
 # this will create QApplication to run the pyside6 code
+class MainWindow(QMainWindow):
+
+    def __init__(self):
+
+        super().__init__()
+        self.setWindowTitle("Offline Converter")
+
 app = QApplication(sys.argv)
+window = MainWindow()
+window.show()
+app.exec()
+
 
 
 # create a button, connect and show it
-button = QPushButton("Click me")
-button.clicked.connect(say_hello)
-button.show()
+# button = QPushButton("Click me")
+# button.clicked.connect(say_hello)
+# button.show()
 
 
 # label = QLabel("Hello World!")
