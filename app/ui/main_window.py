@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow,  QLabel, QPushButton
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxLayout, QPushButton
 from PySide6.QtCore import Slot
 from layout_colorwidget import Color
 
@@ -19,7 +19,14 @@ class MainWindow(QMainWindow):
 
         super().__init__()
         self.setWindowTitle("Offline Converter")
-        widget = Color("black")
+
+        layout = QVBoxLayout()
+
+        layout.addWidget(Color("black"))
+
+
+        widget = QWidget()
+        widget.setLayout(layout)
         self.setCentralWidget(widget)
 
 
