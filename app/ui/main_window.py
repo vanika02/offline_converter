@@ -1,6 +1,7 @@
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow,  QLabel, QPushButton
 from PySide6.QtCore import Slot
+from layout_colorwidget import Color
 
 
 # this creates a func that logs message to the console - slot is a decorator that identifies func as a slot
@@ -18,6 +19,9 @@ class MainWindow(QMainWindow):
 
         super().__init__()
         self.setWindowTitle("Offline Converter")
+        widget = Color("black")
+        self.setCentralWidget(widget)
+
 
 app = QApplication(sys.argv)
 window = MainWindow()
@@ -37,4 +41,4 @@ app.exec()
 
 
 # run the main Qt Loop
-app.exec()
+# app.exec()
