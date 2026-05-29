@@ -22,16 +22,18 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Offline Converter")
 
 
-        centerBtn = QPushButton(
-            icon=QIcon("app/assets/icons/button.svg"),
-            text="Click Here"
-        )
+        BASE_DIR = Path(__file__).resolve().parent.parent
+        ICON_PATH = BASE_DIR / "assets" / "icons" / "button.svg"
 
-        centerBtn.setFixedSize(100, 60)
+
+        btn = QPushButton(text="Click Here")
+        btn.setIcon(QIcon(str(ICON_PATH)))
+
+        btn.setFixedSize(100, 60)
 
         layout = QVBoxLayout()
         layout.addWidget(Color("black"))
-        layout.addWidget(centerBtn)
+        layout.addWidget(btn)
 
 
         widget = QWidget()
