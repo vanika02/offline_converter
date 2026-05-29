@@ -1,9 +1,7 @@
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxLayout, QPushButton
 from PySide6.QtCore import Slot
-from PySide6.QtGui import QIcon
 from layout_colorwidget import Color
-from pathlib import Path
 
 # this creates a func that logs message to the console - slot is a decorator that identifies func as a slot
 @Slot()
@@ -21,14 +19,7 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Offline Converter")
 
-
-        BASE_DIR = Path(__file__).resolve().parent.parent
-        ICON_PATH = BASE_DIR / "assets" / "icons" / "button.svg"
-
-
-        btn = QPushButton(text="Click Here")
-        btn.setIcon(QIcon(str(ICON_PATH)))
-
+        btn = QPushButton(text="Click here")
         btn.setFixedSize(100, 60)
 
         layout = QVBoxLayout()
@@ -45,18 +36,3 @@ app = QApplication(sys.argv)
 window = MainWindow()
 window.show()
 app.exec()
-
-
-
-# create a button, connect and show it
-# button = QPushButton("Click me")
-# button.clicked.connect(say_hello)
-# button.show()
-
-
-# label = QLabel("Hello World!")
-# label.show()
-
-
-# run the main Qt Loop
-# app.exec()
