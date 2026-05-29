@@ -2,6 +2,8 @@ import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxLayout, QPushButton
 from PySide6.QtCore import Slot
 from layout_colorwidget import Color
+from open_file import OpenFileDialog
+
 
 # this creates a func that logs message to the console - slot is a decorator that identifies func as a slot
 @Slot()
@@ -18,7 +20,7 @@ class MainWindow(QMainWindow):
 
         super().__init__()
         self.setWindowTitle("Offline Converter")
-
+        self.label = 
         btn = QPushButton(text="Click here")
         btn.setFixedSize(100, 60)
 
@@ -31,6 +33,8 @@ class MainWindow(QMainWindow):
         widget.setLayout(layout)
         self.setCentralWidget(widget)
 
+        path = OpenFileDialog()
+        self.label.setText(path)
 
 app = QApplication(sys.argv)
 window = MainWindow()
