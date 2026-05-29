@@ -2,7 +2,6 @@ import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxLayout, QPushButton
 from PySide6.QtCore import Slot
 from layout_colorwidget import Color
-from open_file import OpenFileDialog
 
 
 # this creates a func that logs message to the console - slot is a decorator that identifies func as a slot
