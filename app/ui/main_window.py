@@ -36,6 +36,10 @@ class MainWindow(QMainWindow):
         btn = QPushButton(text="Click here")
         btn.setFixedSize(100, 60)
 
+        open_btn = QPushButton(text="Open file")
+        open_btn.setFixedSize(100, 60)
+
+
         layout = QVBoxLayout()
         layout.addWidget(Color("black"))
         layout.addWidget(btn)
