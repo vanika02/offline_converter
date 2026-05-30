@@ -45,7 +45,8 @@ class MainWindow(QMainWindow):
         layout = QVBoxLayout()
         layout.addWidget(Color("black"))
         layout.addWidget(btn)
-
+        layout.addWidget(open_btn)
+        layout.addWidget(save_btn)
 
         widget = QWidget()
         widget.setLayout(layout)
