@@ -2,7 +2,7 @@ import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxLayout, QPushButton
 from PySide6.QtCore import Slot
 from app.ui.layout_colorwidget import Color
-from app.utils.file_dialogs import get_image_file, OpenFileDialog, getSaveFileName
+from app.utils.file_dialogs import get_image_file, OpenFileDialog, SaveFileDialog
 
 
 # this creates a func that logs message to the console - slot is a decorator that identifies func as a slot
@@ -49,8 +49,8 @@ class MainWindow(QMainWindow):
         widget.setLayout(layout)
         self.setCentralWidget(widget)
 
-        self.open_btn.clicked.connect(self.open_image)
-        self.save_btn.clicked.connect(self.save_pdf)
+        open_btn.clicked.connect(self.open_image)
+        save_btn.clicked.connect(self.save_pdf)
 
 app = QApplication(sys.argv)
 window = MainWindow()
