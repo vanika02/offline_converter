@@ -12,6 +12,7 @@ def say_hello():
 
 
 
+
 # creating a class main window to start the application
 # this will create QApplication to run the pyside6 code
 class MainWindow(QMainWindow):
@@ -20,7 +21,7 @@ class MainWindow(QMainWindow):
 
         super().__init__()
         self.setWindowTitle("Offline Converter")
-        self.label = 
+
         btn = QPushButton(text="Click here")
         btn.setFixedSize(100, 60)
 
@@ -33,8 +34,8 @@ class MainWindow(QMainWindow):
         widget.setLayout(layout)
         self.setCentralWidget(widget)
 
-        path = OpenFileDialog()
-        self.label.setText(path)
+        self.open_btn.clicked.connect(self.open_image)
+        self.save_btn.clicked.connect(self.save_pdf)
 
 app = QApplication(sys.argv)
 window = MainWindow()
