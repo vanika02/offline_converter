@@ -11,7 +11,11 @@ def say_hello():
     print("Button clicked, wasssuppp")
 
 
+def open_image():
+    image_path = get_image_file()
 
+    if image_path:
+        print(image_path)
 
 # creating a class main window to start the application
 # this will create QApplication to run the pyside6 code
