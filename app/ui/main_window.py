@@ -17,7 +17,7 @@ def open_image():
     if image_path:
         print(image_path)
 
-def save_image():
+def save_pdf():
     pdf_path = SaveFileDialog()
 
     if pdf_path:
@@ -39,6 +39,8 @@ class MainWindow(QMainWindow):
         open_btn = QPushButton(text="Open file")
         open_btn.setFixedSize(100, 60)
 
+        save_btn = QPushButton(text="Save file")
+        save_btn.setFixedSize(100, 60)
 
         layout = QVBoxLayout()
         layout.addWidget(Color("black"))
@@ -49,8 +51,8 @@ class MainWindow(QMainWindow):
         widget.setLayout(layout)
         self.setCentralWidget(widget)
 
-        open_btn.clicked.connect(self.open_image)
-        save_btn.clicked.connect(self.save_pdf)
+        open_btn.clicked.connect(open_image)
+        save_btn.clicked.connect(save_pdf)
 
 app = QApplication(sys.argv)
 window = MainWindow()
