@@ -25,7 +25,7 @@ def OpenFileDialog():
 
 def SaveFileDialog():
     """
-    Saves a image file dialog to pdf
+    Opens a Save file dialog and return the selected PDF file path
     """
     file_path, _ = QFileDialog.getSaveFileName(None, "Save File", "", "pdf files (*.pdf)")
     return file_path
