@@ -1,8 +1,8 @@
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxLayout, QPushButton
 from PySide6.QtCore import Slot
-from layout_colorwidget import Color
-from utils.file_dialogs import get_image_file, OpenFileDialog, getSaveFileName
+from app.ui.layout_colorwidget import Color
+from app.utils.file_dialogs import get_image_file, OpenFileDialog, getSaveFileName
 
 
 # this creates a func that logs message to the console - slot is a decorator that identifies func as a slot
