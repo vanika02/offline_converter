@@ -17,6 +17,13 @@ def open_image():
     if image_path:
         print(image_path)
 
+def save_image():
+    pdf_path = SaveFileDialog()
+
+    if pdf_path:
+        print(pdf_path)
+
+
 # creating a class main window to start the application
 # this will create QApplication to run the pyside6 code
 class MainWindow(QMainWindow):
