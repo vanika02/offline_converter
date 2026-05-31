@@ -11,9 +11,6 @@
 ├── main.py
 ├── ui
 │   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── layout_colorwidget.cpython-312.pyc
-│   │   └── open_file.cpython-312.pyc
 │   ├── layout_colorwidget.py
 │   └── main_window.py
 └── utils

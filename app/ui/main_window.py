@@ -43,7 +43,7 @@ class MainWindow(QMainWindow):
         save_btn.setFixedSize(100, 60)
 
         layout = QVBoxLayout()
-        layout.addWidget(Color("black"))
+        # layout.addWidget(Color("black"))
         layout.addWidget(btn)
         layout.addWidget(open_btn)
         layout.addWidget(save_btn)
