@@ -13,3 +13,8 @@ app = QApplication(sys.argv)
 
 # this creates an instance of the main window
 window = MainWindow()
+
+window.show() # shows the window (widgets are hidden by default)
+
+# start the event loop
+app.exec()
