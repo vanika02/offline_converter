@@ -54,8 +54,3 @@ class MainWindow(QMainWindow):
 
         open_btn.clicked.connect(open_image)
         save_btn.clicked.connect(save_pdf)
-
-app = QApplication(sys.argv)
-window = MainWindow()
-window.show()
-app.exec()
