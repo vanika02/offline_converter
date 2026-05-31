@@ -4,7 +4,7 @@ import img2pdf
 
 def convert_image_to_pdf(img_path, pdf_path):
     image = Image.open(img_path)
-    pdf_bytes - img2pdf.convert(image.filename)
+    pdf_bytes = img2pdf.convert(image.filename)
 
     with open(pdf_path, "wb") as file:
         file.write(pdf_bytes)
