@@ -5,16 +5,16 @@ from app.utils.file_dialogs import get_image_file, SaveFileDialog
 
 
 # this creates a func that logs message to the console - slot is a decorator that identifies func as a slot
-@Slot()
-def say_hello():
-    print("Button clicked, wasssuppp")
+# @Slot()
+# def say_hello():
+#     print("Button clicked, wasssuppp")
 
 
-def open_image():
-    image_path = get_image_file()
+def select_image(self):
+    self.input_file = get_image_file()
 
-    if image_path:
-        print(image_path)
+    if self.input_file:
+        print("Input", self.input_file)
 
 def save_pdf():
     pdf_path = SaveFileDialog()
@@ -30,6 +30,9 @@ class MainWindow(QMainWindow):
     def __init__(self):
 
         super().__init__()
+        self.input_file = None
+        self.output_file = None
+
         self.setWindowTitle("Offline Converter")
 
 
