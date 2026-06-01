@@ -32,14 +32,15 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Offline Converter")
 
-        btn = QPushButton(text="Click here")
-        btn.setFixedSize(100, 60)
 
-        open_btn = QPushButton(text="Open file")
+        open_btn = QPushButton(text="Select Image")
         open_btn.setFixedSize(100, 60)
 
-        save_btn = QPushButton(text="Save file")
+        save_btn = QPushButton(text="Select Output")
         save_btn.setFixedSize(100, 60)
+
+        convert_btn = QPushButton(text="Convert")
+        convert_btn.setFixedSize(100, 60)
 
         layout = QVBoxLayout()
         # layout.addWidget(Color("black"))
@@ -51,5 +52,6 @@ class MainWindow(QMainWindow):
         widget.setLayout(layout)
         self.setCentralWidget(widget)
 
-        open_btn.clicked.connect(open_image)
-        save_btn.clicked.connect(save_pdf)
+        open_btn.clicked.connect(self.select_image)
+        save_btn.clicked.connect(self.select_output)
+        convert_btn.clicked.connect(self.convert)
