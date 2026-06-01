@@ -2,7 +2,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxL
 from PySide6.QtCore import Slot
 from app.ui.layout_colorwidget import Color
 from app.utils.file_dialogs import get_image_file, SaveFileDialog
-
+from app.Converter.image_to_pdf import convert_image_to_pdf
 
 # this creates a func that logs message to the console - slot is a decorator that identifies func as a slot
 # @Slot()
@@ -22,7 +22,19 @@ def select_output(self):
     if self.output_file:
         print("output:", self.output_file)
 
+def convert(self):
+    if not self.input_file:
+        print("Please select an image")
 
+    if not self.output_file:
+        print("Please select an output location")
+    
+    convert_image_to_pdf(
+        self.input_file,
+        self.output_file
+    )
+
+    print("Conversion successfull")
 # creating a class main window to start the application
 # this will create QApplication to run the pyside6 code
 class MainWindow(QMainWindow):
