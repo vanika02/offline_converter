@@ -16,11 +16,11 @@ def select_image(self):
     if self.input_file:
         print("Input", self.input_file)
 
-def save_pdf():
-    pdf_path = SaveFileDialog()
+def select_output(self):
+    self.output_file = SaveFileDialog()
 
-    if pdf_path:
-        print(pdf_path)
+    if self.output_file:
+        print("output:", self.output_file)
 
 
 # creating a class main window to start the application
