@@ -18,10 +18,10 @@ def SaveFileDialog():
     """
     Opens a Save file dialog and return the selected PDF file path
     """
-    file_path, _ = QFileDialog.getSaveFileName(
+    directory = QFileDialog.getExistingDirectory(
         None,
-        "Save File",
+        "Select Output folder",
         "", "pdf files (*.pdf)"
     )
     
-    return file_path
+    return directory
