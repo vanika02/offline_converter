@@ -58,8 +58,8 @@ class MainWindow(QMainWindow):
         
         if not pdf_path:
             return
-            
+
         convert_image_to_pdf(
             self.input_file,
-            self.output_file
+            pdf_path
         )
