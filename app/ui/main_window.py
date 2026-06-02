@@ -53,6 +53,7 @@ class MainWindow(QMainWindow):
     def convert(self):
         if not self.input_file:
             print("Please select an image")
+            return 
 
         pdf_path = SaveFileDialog()
         
