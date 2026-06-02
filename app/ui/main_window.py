@@ -54,9 +54,11 @@ class MainWindow(QMainWindow):
         if not self.input_file:
             print("Please select an image")
 
-        if not self.output_file:
-            print("Please select an output location")
+        pdf_path = save_pdf_file()
         
+        if not pdf_path:
+            return
+            
         convert_image_to_pdf(
             self.input_file,
             self.output_file
