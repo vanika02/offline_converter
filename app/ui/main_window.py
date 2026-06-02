@@ -54,7 +54,7 @@ class MainWindow(QMainWindow):
         if not self.input_file:
             print("Please select an image")
 
-        pdf_path = save_pdf_file()
+        pdf_path = SaveFileDialog()
         
         if not pdf_path:
             return
