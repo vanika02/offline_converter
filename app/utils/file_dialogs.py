@@ -20,8 +20,7 @@ def SaveFileDialog():
     """
     directory = QFileDialog.getExistingDirectory(
         None,
-        "Select Output folder",
-        "", "pdf files (*.pdf)"
+        "Select Output folder"
     )
     
     return directory
