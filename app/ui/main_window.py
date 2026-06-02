@@ -23,11 +23,7 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Offline Converter")
 
-
-        open_btn = QPushButton(text="Select Image")
-        open_btn.setFixedSize(100, 60)
-
-        save_btn = QPushButton(text="Select Output")
+        save_btn = QPushButton(text="Select Image")
         save_btn.setFixedSize(100, 60)
 
         convert_btn = QPushButton(text="Convert")
@@ -45,8 +41,7 @@ class MainWindow(QMainWindow):
         widget.setLayout(layout)
         self.setCentralWidget(widget)
 
-        open_btn.clicked.connect(self.select_image)
-        save_btn.clicked.connect(self.select_output)
+        save_btn.clicked.connect(self.select_image)
         convert_btn.clicked.connect(self.convert)
 
     def select_image(self):
@@ -54,12 +49,6 @@ class MainWindow(QMainWindow):
 
         if self.input_file:
             print("Input", self.input_file)
-
-    def select_output(self):
-        self.output_file = SaveFileDialog()
-
-        if self.output_file:
-            print("output:", self.output_file)
 
     def convert(self):
         if not self.input_file:
