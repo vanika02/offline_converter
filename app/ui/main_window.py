@@ -23,13 +23,13 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Offline Converter")
 
-        label = QLabel("Offline Convertor")
-        
+        label = QLabel("Offline File Convertor")
+
         save_btn = QPushButton(text="Select Image")
-        save_btn.setFixedSize(100, 60)
+        save_btn.setFixedSize(200, 50)
 
         convert_btn = QPushButton(text="Convert")
-        convert_btn.setFixedSize(100, 60)
+        convert_btn.setFixedSize(200, 50)
 
 
         print("Conversion successfull")
