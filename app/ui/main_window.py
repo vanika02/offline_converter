@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxLayout, QPushButton
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxLayout, QPushButton, QMessageBox
 from PySide6.QtCore import Slot
 from app.ui.layout_colorwidget import Color
 from app.utils.file_dialogs import get_image_file, SaveFileDialog
@@ -66,3 +66,5 @@ class MainWindow(QMainWindow):
             self.input_file,
             pdf_path
         )
+        if True:
+
