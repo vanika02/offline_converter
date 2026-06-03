@@ -33,7 +33,7 @@ class MainWindow(QMainWindow):
         print("Conversion successfull")
         layout = QVBoxLayout()
         # layout.addWidget(Color("black"))
-        layout.addWidget(open_btn)
+        # layout.addWidget(open_btn)
         layout.addWidget(save_btn)
         layout.addWidget(convert_btn)
 
