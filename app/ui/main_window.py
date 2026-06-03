@@ -67,4 +67,9 @@ class MainWindow(QMainWindow):
             pdf_path
         )
         if True:
+            QMessageBox.information(
+                self, 
+                "Success", 
+                "PDF created successfully"
+            )
 
