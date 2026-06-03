@@ -57,11 +57,18 @@ class MainWindow(QMainWindow):
             print("Please select an image")
             return 
 
-        pdf_path = SaveFileDialog()
+        output_dir = SaveFileDialog()
         
-        if not pdf_path:
+        if not output_dir:
             return
 
+        image_name = Path(self.imput_file).stem 
+
+        pdf_path = os.path.join(
+            output_dir,
+            f"{image_name}.pdf"
+        )
+        
         convert_image_to_pdf(
             self.input_file,
             pdf_path
