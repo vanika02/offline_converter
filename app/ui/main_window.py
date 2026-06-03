@@ -23,6 +23,8 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Offline Converter")
 
+        label = QLabel("Offline Convertor")
+        
         save_btn = QPushButton(text="Select Image")
         save_btn.setFixedSize(100, 60)
 
