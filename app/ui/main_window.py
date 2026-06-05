@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QHBoxLayout, QPushButton, QMessageBox
-from PySide6.QtCore import Slot
+from PySide6.QtCore import Qt
 from app.ui.layout_colorwidget import Color
 from app.utils.file_dialogs import get_image_file, SaveFileDialog
 from app.convertors.image_to_pdf import convert_image_to_pdf
@@ -28,12 +28,12 @@ class MainWindow(QMainWindow):
         label = QLabel("Offline File Convertor")
 
         # center the text with the label widget
-        label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        label.setAlignment(Qt.AlignmentFlag.AlignTop)
 
         # set the label as the central widget
         self.setCentralWidget(label)
 
-        
+
         save_btn = QPushButton(text="Select Image")
         save_btn.setFixedSize(200, 50)
 
@@ -45,6 +45,8 @@ class MainWindow(QMainWindow):
 
         layout.addWidget(save_btn)
         layout.addWidget(convert_btn)
+        layout.addWidget(label)
+
 
         widget = QWidget()
         widget.setLayout(layout)
