@@ -25,25 +25,11 @@ class MainWindow(QMainWindow):
         self.file_label = QLabel("Selected file: None")
         self.file_label.setAlignment(Qt.AlignCenter)
 
-
-        # create a label widget
-        self.label_1 = QLabel(info, self)
-
-        self.label_1.move(100, 100) # move positions
-        self.label_1.setStyleSheet("border: 1px solid black;")
-
-        # center the text with the label widget
-        # label.setAlignment(Qt.AlignmentFlag.AlignTop)
-
-        # set the label as the central widget
-        # self.setCentralWidget(label)
-
-
+        #buttons
         save_btn = QPushButton(text="Select Image")
-        save_btn.setFixedSize(200, 50)
 
-        convert_btn = QPushButton(text="Convert")
-        convert_btn.setFixedSize(200, 50)
+        convert_btn = QPushButton(text="Convert to PDF")
+  
 
         layout = QHBoxLayout()
 
