@@ -24,8 +24,16 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Offline Converter")
 
+        # create the label
         label = QLabel("Offline File Convertor")
 
+        # center the text with the label widget
+        label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        # set the label as the central widget
+        self.setCentralWidget(label)
+
+        
         save_btn = QPushButton(text="Select Image")
         save_btn.setFixedSize(200, 50)
 
