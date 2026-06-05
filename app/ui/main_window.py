@@ -26,18 +26,19 @@ class MainWindow(QMainWindow):
         self.file_label.setAlignment(Qt.AlignCenter)
 
         #buttons
-        save_btn = QPushButton(text="Select Image")
-
+        select_btn = QPushButton(text="Select Image")
         convert_btn = QPushButton(text="Convert to PDF")
-  
 
+        select_btn.setMinimumHeight(50)
+        convert_btn.setMinimumHeight(50)
+
+        #layout
         layout = QHBoxLayout()
 
-
+        layout.addWidget(title_label)
+        layout.addWidget(self.file_label)
         layout.addWidget(save_btn)
         layout.addWidget(convert_btn)
-        # layout.addWidget(label)
-
 
         widget = QWidget()
         widget.setLayout(layout)
