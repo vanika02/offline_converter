@@ -32,11 +32,9 @@ class MainWindow(QMainWindow):
         convert_btn = QPushButton(text="Convert")
         convert_btn.setFixedSize(200, 50)
 
-
-        print("Conversion successfull")
         layout = QVBoxLayout()
-        # layout.addWidget(Color("black"))
-        # layout.addWidget(open_btn)
+
+
         layout.addWidget(save_btn)
         layout.addWidget(convert_btn)
 
