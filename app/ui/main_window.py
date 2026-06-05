@@ -20,10 +20,10 @@ class MainWindow(QMainWindow):
         title_label = QLabel("Offline Image -> PDF Converter")
         title_label.setAlignment(Qt.AlignCenter)
 
-        
+
         # file selection info
-        info = "no file selected"
-        new_info = "File selected"
+        self.file_label = QLabel("Selected file: None")
+        self.file_label.setAlignment(Qt.AlignCenter)
 
 
         # create a label widget
