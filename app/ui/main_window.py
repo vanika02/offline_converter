@@ -14,7 +14,13 @@ class MainWindow(QMainWindow):
         self.input_file = None
 
         self.setWindowTitle("Offline Converter")
-        self.resize(500, 250)
+        self.resize(500, 350)
+
+        # title
+        title_label = QLabel("Offline Image -> PDF Converter")
+        title_label.setAlignment(Qt.AlignCenter)
+
+        
         # file selection info
         info = "no file selected"
         new_info = "File selected"
