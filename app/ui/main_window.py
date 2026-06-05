@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxLayout, QPushButton, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QHBoxLayout, QPushButton, QMessageBox
 from PySide6.QtCore import Slot
 from app.ui.layout_colorwidget import Color
 from app.utils.file_dialogs import get_image_file, SaveFileDialog
@@ -32,7 +32,7 @@ class MainWindow(QMainWindow):
         convert_btn = QPushButton(text="Convert")
         convert_btn.setFixedSize(200, 50)
 
-        layout = QVBoxLayout()
+        layout = QHBoxLayout()
 
 
         layout.addWidget(save_btn)
