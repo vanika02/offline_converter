@@ -37,7 +37,7 @@ class MainWindow(QMainWindow):
 
         layout.addWidget(title_label)
         layout.addWidget(self.file_label)
-        layout.addWidget(save_btn)
+        layout.addWidget(select_btn)
         layout.addWidget(convert_btn)
 
         # central widget
@@ -57,8 +57,12 @@ class MainWindow(QMainWindow):
             # print("Input", self.input_file)
 
     def convert(self):
+
         if not self.input_file:
-            print("Please select an image")
+            QMessageBox.warning(
+                self, "Error", "Please select an image"
+            )
+            # print("Please select an image")
             return 
 
         output_dir = SaveFileDialog()
@@ -72,15 +76,18 @@ class MainWindow(QMainWindow):
             output_dir,
             f"{image_name}.pdf"
         )
-
-        convert_image_to_pdf(
-            self.input_file,
-            pdf_path
-        )
-        if True:
-            QMessageBox.information(
-                self, 
-                "Success", 
-                "PDF created successfully"
+        try:
+            convert_image_to_pdf(
+                self.input_file,
+                pdf_path
             )
-
+            if True:
+                QMessageBox.information(
+                    self, 
+                    "Success", 
+                    f"PDF created successfully!\n\n{pdf_path}"
+                )
+        except Exception as e:
+            QMessageBox.critical(
+                self, "Conversion Failed", str(e)
+            )
