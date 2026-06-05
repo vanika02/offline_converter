@@ -40,18 +40,21 @@ class MainWindow(QMainWindow):
         layout.addWidget(save_btn)
         layout.addWidget(convert_btn)
 
-        widget = QWidget()
-        widget.setLayout(layout)
-        self.setCentralWidget(widget)
+        # central widget
+        container = QWidget()
+        container.setLayout(layout)
+        self.setCentralWidget(container)
 
-        save_btn.clicked.connect(self.select_image)
+        select_btn.clicked.connect(self.select_image)
         convert_btn.clicked.connect(self.convert)
 
     def select_image(self):
         self.input_file = get_image_file()
 
         if self.input_file:
-            print("Input", self.input_file)
+            file_name = Path(self.input_file).name 
+            self.file_label.setText(f"Selecte File: {file_name}")
+            # print("Input", self.input_file)
 
     def convert(self):
         if not self.input_file:
