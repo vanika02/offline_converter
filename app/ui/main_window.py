@@ -5,33 +5,32 @@ from app.utils.file_dialogs import get_image_file, SaveFileDialog
 from app.convertors.image_to_pdf import convert_image_to_pdf
 import os
 
-# this creates a func that logs message to the console - slot is a decorator that identifies func as a slot
-# @Slot()
-# def say_hello():
-#     print("Button clicked, wasssuppp")
 
-
-
-# creating a class main window to start the application
-# this will create QApplication to run the pyside6 code
 class MainWindow(QMainWindow):
 
     def __init__(self):
-
         super().__init__()
+
         self.input_file = None
-        self.output_file = None
 
         self.setWindowTitle("Offline Converter")
+        self.resize(500, 250)
+        # file selection info
+        info = "no file selected"
+        new_info = "File selected"
 
-        # create the label
-        label = QLabel("Offline File Convertor")
+
+        # create a label widget
+        self.label_1 = QLabel(info, self)
+
+        self.label_1.move(100, 100) # move positions
+        self.label_1.setStyleSheet("border: 1px solid black;")
 
         # center the text with the label widget
-        label.setAlignment(Qt.AlignmentFlag.AlignTop)
+        # label.setAlignment(Qt.AlignmentFlag.AlignTop)
 
         # set the label as the central widget
-        self.setCentralWidget(label)
+        # self.setCentralWidget(label)
 
 
         save_btn = QPushButton(text="Select Image")
@@ -45,7 +44,7 @@ class MainWindow(QMainWindow):
 
         layout.addWidget(save_btn)
         layout.addWidget(convert_btn)
-        layout.addWidget(label)
+        # layout.addWidget(label)
 
 
         widget = QWidget()
