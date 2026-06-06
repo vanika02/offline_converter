@@ -71,7 +71,7 @@ class MainWindow(QMainWindow):
         if not output_dir:
             return
 
-        image_name = Path(self.imput_file).stem 
+        image_name = Path(self.input_file).stem 
 
         pdf_path = os.path.join(
             output_dir,
