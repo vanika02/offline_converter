@@ -46,7 +46,7 @@ class MainWindow(QMainWindow):
             padding: 20px;
             font-size: 18px;
             """)
-            
+
         #layout
         layout = QVBoxLayout()
 
@@ -59,6 +59,9 @@ class MainWindow(QMainWindow):
         container = QWidget()
         container.setLayout(layout)
         self.setCentralWidget(container)
+        container.setStyleSheet("""
+        background-color: #DDDDDD;
+        """)
 
         select_btn.clicked.connect(self.select_image)
         convert_btn.clicked.connect(self.convert)
