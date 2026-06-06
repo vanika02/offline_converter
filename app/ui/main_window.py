@@ -30,6 +30,10 @@ class MainWindow(QMainWindow):
         # file selection info
         self.file_label = QLabel("Selected file: None")
         self.file_label.setAlignment(Qt.AlignCenter)
+        self.file_label.setStyleSheet("""
+            font-family: Titillium;
+            font-size: 25px;
+            """)
 
         #buttons
         select_btn = QPushButton(text="Select Image")
