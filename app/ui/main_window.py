@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QHBoxLayout, QPushButton, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxLayout, QPushButton, QMessageBox
 from PySide6.QtCore import Qt
 from pathlib import Path
 from app.ui.layout_colorwidget import Color
@@ -34,7 +34,7 @@ class MainWindow(QMainWindow):
         convert_btn.setMinimumHeight(50)
 
         #layout
-        layout = QHBoxLayout()
+        layout = QVBoxLayout()
 
         layout.addWidget(title_label)
         layout.addWidget(self.file_label)
