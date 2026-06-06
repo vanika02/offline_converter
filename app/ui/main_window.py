@@ -46,6 +46,12 @@ class MainWindow(QMainWindow):
             padding: 20px;
             font-size: 18px;
             """)
+        
+        convert_btn.setStyleSheet("""
+            background-color: #CB2957;
+            padding: 20px;
+            font-size: 18px;
+            """)
 
         #layout
         layout = QVBoxLayout()
