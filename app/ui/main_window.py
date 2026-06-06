@@ -41,7 +41,12 @@ class MainWindow(QMainWindow):
 
         select_btn.setMinimumHeight(50)
         convert_btn.setMinimumHeight(50)
-
+        select_btn.setStyleSheet("""
+            background-color: #2ABf9E;
+            padding: 20px;
+            font-size: 18px;
+            """)
+            
         #layout
         layout = QVBoxLayout()
 
