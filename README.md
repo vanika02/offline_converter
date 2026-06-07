@@ -45,3 +45,12 @@ All conversions happen offline.
 - PySide6
 - Pillow
 - img2pdf
+
+## Installation
+
+Clone the repository:
+
+```
+git clone https://github.com/vanika02/offline_converter.git
+cd offline_converter
+```
