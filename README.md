@@ -54,3 +54,10 @@ Clone the repository:
 git clone https://github.com/vanika02/offline_converter.git
 cd offline_converter
 ```
+
+## Create and Activate Virtual Environment
+
+```
+python3 -m venv venv
+source venv/bin/activate
+```
