@@ -1,5 +1,10 @@
 ## Offline File Converter
-convert file format locally
+
+A privacy-first desktop application built ith Python and PySide6
+
+The application performs file conversions locally on the user's machine without uploading files to any third-party server.
+
+
 
 ## Folder Structure
 
