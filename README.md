@@ -38,3 +38,10 @@ The application performs file conversions locally on the user's machine without 
 - No cloud uploads
 
 All conversions happen offline.
+
+## Tech Stack
+
+- Python
+- PySide6
+- Pillow
+- img2pdf
