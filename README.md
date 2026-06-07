@@ -30,6 +30,11 @@ The application performs file conversions locally on the user's machine without 
 
 ## Current Features 
 
-- Image -> PDF conversion
+### 1. Image -> PDF conversion
+- Select image files
+- convert images to pdf
+- Choose output folder
+- Local processing 
+- No cloud uploads
 
 All conversions happen offline.
