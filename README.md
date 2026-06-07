@@ -5,7 +5,6 @@ A privacy-first desktop application built ith Python and PySide6
 The application performs file conversions locally on the user's machine without uploading files to any third-party server.
 
 
-
 ## Folder Structure
 
 ```
@@ -28,3 +27,9 @@ The application performs file conversions locally on the user's machine without 
 7 directories, 11 files
 
 ```
+
+## Current Features 
+
+- Image -> PDF conversion
+
+All conversions happen offline.
