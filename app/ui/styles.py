@@ -15,3 +15,9 @@ background-color: #2ABf9E;
 padding: 20px;
 font-size: 18px;
 """
+
+CONVERT_BUTTON = """
+background-color: #CB2957;
+padding: 20px;
+font-size: 18px;
+"""

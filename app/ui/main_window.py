@@ -4,7 +4,7 @@ from pathlib import Path
 from app.ui.layout_colorwidget import Color
 from app.utils.file_dialogs import get_image_file, SaveFileDialog
 from app.convertors.image_to_pdf import convert_image_to_pdf
-from app.ui.styles import TITLE_LABEL, FILE_LABEL, SELECT_BUTTON
+from app.ui.styles import TITLE_LABEL, FILE_LABEL, SELECT_BUTTON, CONVERT_BUTTON
 import os
 
 
@@ -36,11 +36,7 @@ class MainWindow(QMainWindow):
         convert_btn.setMinimumHeight(50)
         select_btn.setStyleSheet(SELECT_BUTTON)
         
-        convert_btn.setStyleSheet("""
-            background-color: #CB2957;
-            padding: 20px;
-            font-size: 18px;
-            """)
+        convert_btn.setStyleSheet(CONVERT_BUTTON)
 
         #layout
         layout = QVBoxLayout()
