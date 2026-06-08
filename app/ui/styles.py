@@ -9,3 +9,9 @@ FILE_LABEL = """
 font-family: Titillium;
 font-size: 25px;
 """
+
+SELECT_BUTTON = """
+background-color: #2ABf9E;
+padding: 20px;
+font-size: 18px;
+"""
