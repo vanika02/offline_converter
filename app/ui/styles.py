@@ -21,3 +21,7 @@ background-color: #CB2957;
 padding: 20px;
 font-size: 18px;
 """
+
+MAIN_CONTAINER = """
+background-color: #DDDDDD;
+"""

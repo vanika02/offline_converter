@@ -4,7 +4,7 @@ from pathlib import Path
 from app.ui.layout_colorwidget import Color
 from app.utils.file_dialogs import get_image_file, SaveFileDialog
 from app.convertors.image_to_pdf import convert_image_to_pdf
-from app.ui.styles import TITLE_LABEL, FILE_LABEL, SELECT_BUTTON, CONVERT_BUTTON
+from app.ui.styles import TITLE_LABEL, FILE_LABEL, SELECT_BUTTON, CONVERT_BUTTON, MAIN_CONTAINER
 import os
 
 
@@ -50,9 +50,7 @@ class MainWindow(QMainWindow):
         container = QWidget()
         container.setLayout(layout)
         self.setCentralWidget(container)
-        container.setStyleSheet("""
-        background-color: #DDDDDD;
-        """)
+        container.setStyleSheet(MAIN_CONTAINER)
 
         select_btn.clicked.connect(self.select_image)
         convert_btn.clicked.connect(self.convert)
