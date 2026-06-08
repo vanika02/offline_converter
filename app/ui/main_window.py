@@ -4,6 +4,7 @@ from pathlib import Path
 from app.ui.layout_colorwidget import Color
 from app.utils.file_dialogs import get_image_file, SaveFileDialog
 from app.convertors.image_to_pdf import convert_image_to_pdf
+from app.ui.styles import TITLE_LABEL
 import os
 
 
@@ -20,12 +21,7 @@ class MainWindow(QMainWindow):
         # title
         title_label = QLabel("Offline Image -> PDF Converter")
         title_label.setAlignment(Qt.AlignCenter)
-        title_label.setStyleSheet("""
-            background-color: #262626;
-            color: #FFFFFF;
-            font-family: Titillium;
-            font-size: 30px;
-            """)
+        title_label.setStyleSheet()
 
         # file selection info
         self.file_label = QLabel("Selected file: None")
