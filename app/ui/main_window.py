@@ -4,7 +4,7 @@ from pathlib import Path
 from app.ui.layout_colorwidget import Color
 from app.utils.file_dialogs import get_image_file, SaveFileDialog
 from app.convertors.image_to_pdf import convert_image_to_pdf
-from app.ui.styles import TITLE_LABEL
+from app.ui.styles import TITLE_LABEL, FILE_LABEL
 import os
 
 
@@ -26,10 +26,7 @@ class MainWindow(QMainWindow):
         # file selection info
         self.file_label = QLabel("Selected file: None")
         self.file_label.setAlignment(Qt.AlignCenter)
-        self.file_label.setStyleSheet("""
-            font-family: Titillium;
-            font-size: 25px;
-            """)
+        self.file_label.setStyleSheet(FILE_LABEL)
 
         #buttons
         select_btn = QPushButton(text="Select Image")
