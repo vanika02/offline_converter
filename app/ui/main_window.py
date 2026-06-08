@@ -21,7 +21,7 @@ class MainWindow(QMainWindow):
         # title
         title_label = QLabel("Offline Image -> PDF Converter")
         title_label.setAlignment(Qt.AlignCenter)
-        title_label.setStyleSheet()
+        title_label.setStyleSheet(TITLE_LABEL)
 
         # file selection info
         self.file_label = QLabel("Selected file: None")
