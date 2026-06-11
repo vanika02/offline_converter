@@ -4,8 +4,9 @@ from pathlib import Path
 from app.ui.layout_colorwidget import Color
 from app.utils.file_dialogs import get_image_file, SaveFileDialog
 from app.convertors.image_to_pdf import convert_image_to_pdf
-from app.ui.QtWidgets.title_label import TitleLabel
-from app.ui.QtWidgets.file_label import FileLabel
+from app.ui.Widgets.title_label import TitleLabel
+from app.ui.Widgets.file_label import 
+from app.ui.widgets.action_buttons import SelectButton, ConvertButton
 from app.ui.styles import TITLE_LABEL, FILE_LABEL, SELECT_BUTTON, CONVERT_BUTTON, MAIN_CONTAINER
 import os
 
