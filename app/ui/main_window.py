@@ -27,14 +27,9 @@ class MainWindow(QMainWindow):
         # file selection info
         self.file_label = FileLabel()
         #buttons
-        select_btn = QPushButton(text="Select Image")
-        convert_btn = QPushButton(text="Convert to PDF")
+        select_btn = SelectButton()
+        convert_btn = ConvertButton()
 
-        select_btn.setMinimumHeight(50)
-        convert_btn.setMinimumHeight(50)
-        select_btn.setStyleSheet(SELECT_BUTTON)
-        
-        convert_btn.setStyleSheet(CONVERT_BUTTON)
 
         #layout
         layout = QVBoxLayout()
