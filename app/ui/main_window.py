@@ -5,6 +5,7 @@ from app.ui.layout_colorwidget import Color
 from app.utils.file_dialogs import get_image_file, SaveFileDialog
 from app.convertors.image_to_pdf import convert_image_to_pdf
 from app.ui.QtWidgets.title_label import TitleLabel
+from app.ui.QtWidgets.file_label import FileLabel
 from app.ui.styles import TITLE_LABEL, FILE_LABEL, SELECT_BUTTON, CONVERT_BUTTON, MAIN_CONTAINER
 import os
 
@@ -23,10 +24,7 @@ class MainWindow(QMainWindow):
         self.title_label = TitleLabel()
 
         # file selection info
-        self.file_label = QLabel("Selected file: None")
-        self.file_label.setAlignment(Qt.AlignCenter)
-        self.file_label.setStyleSheet(FILE_LABEL)
-
+        self.file_label = FileLabel()
         #buttons
         select_btn = QPushButton(text="Select Image")
         convert_btn = QPushButton(text="Convert to PDF")
