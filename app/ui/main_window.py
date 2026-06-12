@@ -34,7 +34,7 @@ class MainWindow(QMainWindow):
         #layout
         layout = QVBoxLayout()
 
-        layout.addWidget(title_label)
+        layout.addWidget(self.title_label)
         layout.addWidget(self.file_label)
         layout.addWidget(select_btn)
         layout.addWidget(convert_btn)
