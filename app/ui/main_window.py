@@ -30,6 +30,9 @@ class MainWindow(QMainWindow):
         select_btn = SelectButton()
         convert_btn = ConvertButton()
 
+        # styles
+        select_btn.setStyleSheet(SELECT_BUTTON)
+        convert_btn.setStyleSheet(CONVERT_BUTTON)
 
         #layout
         layout = QVBoxLayout()
