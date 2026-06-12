@@ -31,6 +31,8 @@ class MainWindow(QMainWindow):
         convert_btn = ConvertButton()
 
         # styles
+        self.title_label.setStyleSheet(TITLE_LABEL)
+        self.file_label.setStyleSheet(FILE_LABEL)
         select_btn.setStyleSheet(SELECT_BUTTON)
         convert_btn.setStyleSheet(CONVERT_BUTTON)
 
