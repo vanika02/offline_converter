@@ -50,8 +50,8 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(container)
         container.setStyleSheet(MAIN_CONTAINER)
 
-        select_btn.clicked.connect(self.select_image)
-        convert_btn.clicked.connect(self.convert)
+        self.select_btn.clicked.connect(self.select_image)
+        self.convert_btn.clicked.connect(self.convert)
 
     def select_image(self):
         self.input_file = get_image_file()
