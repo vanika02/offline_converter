@@ -59,7 +59,7 @@ class MainWindow(QMainWindow):
         self.select_btn.clicked.connect(self.select_image)
         self.convert_btn.clicked.connect(self.convert)
 
-    def select_image(self):
+    def select_file(self):
         self.input_file = get_image_file()
 
         if self.input_file:
@@ -71,7 +71,7 @@ class MainWindow(QMainWindow):
 
         if not self.input_file:
             QMessageBox.warning(
-                self, "Error", "Please select an image"
+                self, "Error", "Please select a file"
             )
             # print("Please select an image")
             return 
