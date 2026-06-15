@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxLayout, QPushButton, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxLayout, QPushButton, QMessageBox, QComboBox
 from PySide6.QtCore import Qt
 from pathlib import Path
 from app.ui.layout_colorwidget import Color
@@ -26,6 +26,11 @@ class MainWindow(QMainWindow):
 
         # file selection info
         self.file_label = FileLabel()
+
+        # comboBox
+        self.conversion_box = QComboBox()
+        self.comversion_box.addItems(["Image -> PDF", "PDF -> Image"])
+        
         #buttons
         self.select_btn = SelectButton()
         self.convert_btn = ConvertButton()
