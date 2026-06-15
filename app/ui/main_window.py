@@ -27,22 +27,22 @@ class MainWindow(QMainWindow):
         # file selection info
         self.file_label = FileLabel()
         #buttons
-        select_btn = SelectButton()
-        convert_btn = ConvertButton()
+        self.select_btn = SelectButton()
+        self.convert_btn = ConvertButton()
 
         # styles
         self.title_label.setStyleSheet(TITLE_LABEL)
         self.file_label.setStyleSheet(FILE_LABEL)
-        select_btn.setStyleSheet(SELECT_BUTTON)
-        convert_btn.setStyleSheet(CONVERT_BUTTON)
+        self.select_btn.setStyleSheet(SELECT_BUTTON)
+        self.convert_btn.setStyleSheet(CONVERT_BUTTON)
 
         #layout
         layout = QVBoxLayout()
 
         layout.addWidget(self.title_label)
         layout.addWidget(self.file_label)
-        layout.addWidget(select_btn)
-        layout.addWidget(convert_btn)
+        layout.addWidget(self.select_btn)
+        layout.addWidget(self.convert_btn)
 
         # central widget
         container = QWidget()
