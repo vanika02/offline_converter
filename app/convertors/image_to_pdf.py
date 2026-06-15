@@ -12,4 +12,3 @@ def convert_image_to_pdf(img_path, pdf_path):
     image.close()
 
     return True
-
