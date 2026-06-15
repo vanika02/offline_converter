@@ -29,8 +29,8 @@ class MainWindow(QMainWindow):
 
         # comboBox
         self.conversion_box = QComboBox()
-        self.comversion_box.addItems(["Image -> PDF", "PDF -> Image"])
-        
+        self.conversion_box.addItems(["Image -> PDF", "PDF -> Image"])
+
         #buttons
         self.select_btn = SelectButton()
         self.convert_btn = ConvertButton()
@@ -46,6 +46,7 @@ class MainWindow(QMainWindow):
 
         layout.addWidget(self.title_label)
         layout.addWidget(self.file_label)
+        layout.addWidget(self.conversion_box)
         layout.addWidget(self.select_btn)
         layout.addWidget(self.convert_btn)
 
