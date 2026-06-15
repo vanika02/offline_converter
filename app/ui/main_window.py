@@ -60,12 +60,19 @@ class MainWindow(QMainWindow):
         self.convert_btn.clicked.connect(self.convert)
 
     def select_file(self):
-        self.input_file = get_image_file()
+        conversion = self.conversion_box.currentText()
 
+        if conversion == "Image -> PDF":
+            self.input_file = get_image_file()
+
+        elif conversion == "PDF -> Image":
+            self.input_file == get_pdf_file()
+        
         if self.input_file:
-            file_name = Path(self.input_file).name 
-            self.file_label.setText(f"Selecte File: {file_name}")
-            # print("Input", self.input_file)
+            filename = Path(self.input_file).image_name
+            self.file_label.setText(
+                f"Selected File : {filename}"
+            )
 
     def convert(self):
 
