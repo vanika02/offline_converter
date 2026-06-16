@@ -2,7 +2,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxL
 from PySide6.QtCore import Qt
 from pathlib import Path
 from app.ui.layout_colorwidget import Color
-from app.utils.file_dialogs import get_image_file, SaveFileDialog
+from app.utils.file_dialogs import get_image_file, SaveFileDialog, get_pdf_file
 from app.convertors.image_to_pdf import convert_image_to_pdf
 from app.ui.widgets.title_label import TitleLabel
 from app.ui.widgets.file_label import FileLabel
