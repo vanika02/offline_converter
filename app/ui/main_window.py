@@ -88,23 +88,28 @@ class MainWindow(QMainWindow):
         if not output_dir:
             return
 
-        image_name = Path(self.input_file).stem 
+        conversion = self.conversion_box.currentText()
 
-        pdf_path = os.path.join(
-            output_dir,
-            f"{image_name}.pdf"
-        )
         try:
-            convert_image_to_pdf(
-                self.input_file,
-                pdf_path
-            )
-            if True:
-                QMessageBox.information(
-                    self, 
-                    "Success", 
-                    f"PDF created successfully!\n\n{pdf_path}"
+            if conversion == "Image -> PDF":
+                pdf_path = os.path.join(
+                    output_dir, f"{image_name}.pdf"
                 )
+
+                convert_pdf_to_image(self.input_file, pdf_path)
+                
+            elif conversion == "PDF -> Image":
+
+                convert_image_to_pdf(
+                    self.input_file,
+                    output_dir
+                )
+                if True:
+                    QMessageBox.information(
+                        self, 
+                        "Success", 
+                        f"PDF created successfully!\n\n{pdf_path}"
+                    )
         except Exception as e:
             QMessageBox.critical(
                 self, "Conversion Failed", str(e)
