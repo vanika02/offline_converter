@@ -14,6 +14,13 @@ def  get_image_file():
 
     return file_path
 
+def get_pdf_file():
+    
+    file, _ = QFileDialog.getOpenFileName(
+        None, "Select PDF", "", "PDF Files (*.pdf)"
+    )
+    return file
+
 def SaveFileDialog():
     """
     Opens a Save file dialog and return the selected PDF file path
