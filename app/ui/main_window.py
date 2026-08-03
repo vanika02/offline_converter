@@ -56,7 +56,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(container)
         container.setStyleSheet(MAIN_CONTAINER)
 
-        self.select_btn.clicked.connect(self.select_image)
+        self.select_btn.clicked.connect(self.select_file)
         self.convert_btn.clicked.connect(self.convert)
 
     def select_file(self):
@@ -66,7 +66,7 @@ class MainWindow(QMainWindow):
             self.input_file = get_image_file()
 
         elif conversion == "PDF -> Image":
-            self.input_file == get_pdf_file()
+            self.input_file = get_pdf_file()
         
         if self.input_file:
             filename = Path(self.input_file).image_name
