@@ -69,7 +69,7 @@ class MainWindow(QMainWindow):
             self.input_file = get_pdf_file()
         
         if self.input_file:
-            filename = Path(self.input_file).image_name
+            filename = Path(self.input_file).name
             self.file_label.setText(
                 f"Selected File : {filename}"
             )
@@ -96,11 +96,11 @@ class MainWindow(QMainWindow):
                     output_dir, f"{image_name}.pdf"
                 )
 
-                convert_pdf_to_image(self.input_file, pdf_path)
+                convert_image_to_pdf(self.input_file, pdf_path)
                 
             elif conversion == "PDF -> Image":
 
-                convert_image_to_pdf(
+                convert_pdf_to_image(
                     self.input_file,
                     output_dir
                 )
