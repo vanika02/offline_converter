@@ -15,6 +15,8 @@ class ConversionService:
         
         if not output_dir:
             raise ValueError("No output directory selected")
+        
+        image_name = os.path.basename(input_file)[0]
 
         if conversion_type == "Image -> PDF":
             pdf_path = os.path.join(
@@ -22,10 +24,14 @@ class ConversionService:
             )
 
             convert_image_to_pdf(input_file, pdf_path)
+
+            return pdf_path
         
         elif conversion_type == "PDF -> Image":
 
             convert_pdf_to_image(input_file, output_dir)
+
+            return output_dir
 
         else:
             raise ValueError("Unsupported converison")
