@@ -1,10 +1,9 @@
 from app.convertors.image_to_pdf import convert_image_to_pdf
 from app.convertors.pdf_to_image import convert_pdf_to_image
-from app.utils.widgets.file_dialogs import SaveFileDialog
 
 class ConversionService:
 
-    def convert(self, input_file):
+    def convert(self, input_file, output_dir, conversion_type):
 
         if not input_file:
             raise ValueError("Please select a file")
