@@ -1,6 +1,5 @@
 from app.convertors.image_to_pdf import convert_image_to_pdf
 from app.convertors.pdf_to_image import convert_pdf_to_image
-from PySide6.QtWidgets import QMessageBox
 from app.utils.widgets.file_dialogs import SaveFileDialog
 
 class ConversionService:
@@ -8,20 +7,16 @@ class ConversionService:
     def convert(self, input_file):
 
         if not input_file:
-            QMessageBox.warning(
-                self, "Error", "Please select a file"
-            )
+            raise ValueError("Please select a file")
             return 
         
         output_dir = SaveFileDialog()
 
         if not output_dir:
-            QMessageBox.warning(
-                self, "Error", "No output directory"
-            )
+            raise ValueError("No output directory selected")
             return 
         
-        conversion = self.conversion_box.currentText()
+        conversion = conversion_box.currentText()
 
         try: 
             if conversion == "Image -> PDF":
