@@ -8,11 +8,9 @@ class ConversionService:
 
         if not input_file:
             raise ValueError("Please select a file")
-            return 
         
         if not output_dir:
             raise ValueError("No output directory selected")
-            return      
 
         if conversion_type == "Image -> PDF":
             pdf_path = os.path.join(
