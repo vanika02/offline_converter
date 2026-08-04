@@ -75,29 +75,35 @@ class MainWindow(QMainWindow):
                 f"Selected File : {filename}"
             )
 
-    if not self.input_file:
-        QMessageBox.warning(
-            self, "Error", "Please select a file"
-        )
-        # print("Please select an image")
-        return 
+    def convert(self):
+        if not self.input_file:
+            QMessageBox.warning(
+                self,
+                "Error",
+                "Please select a file"
+            )
+            return 
 
-    output_dir = SaveFileDialog()
-    
-    if not output_dir:
-        return
+        output_dir = SaveFileDialog()
+        if not output_dir:
+            return 
+        
+        conversion_type = self.conversion_box.currentText()
 
-    conversion_type = self.conversion_box.currentText()
-
-    try:
-        conversion  = ConversionService.convert(self, input_file, output_dir, conversion_type)
-            if True:
-                QMessageBox.information(
-                    self, 
-                    "Success", 
-                    f"PDF created successfully!\n\n{pdf_path}"
-                )
-    except Exception as e:
-        QMessageBox.critical(
-            self, "Conversion Failed", str(e)
-        )
+        try:
+            output = self.ConversionService.convert(
+                self.input_file,
+                output_dir,
+                conversion_type
+            )
+            QMessageBox.information(
+                self,
+                "Success",
+                f"Conversion completed successfully.\n\n{output}"
+            )
+        except Exception as e:
+            QMessageBox.critical(
+                self,
+                "Conversion Failed",
+                str(e)
+            )
