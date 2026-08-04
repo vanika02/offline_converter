@@ -4,6 +4,7 @@ from pathlib import Path
 from app.ui.layout_colorwidget import Color
 from app.utils.file_dialogs import get_image_file, SaveFileDialog, get_pdf_file
 from app.convertors.image_to_pdf import convert_image_to_pdf
+from app.services.conversion_service import ConversionService
 from app.ui.widgets.title_label import TitleLabel
 from app.ui.widgets.file_label import FileLabel
 from app.ui.widgets.action_buttons import SelectButton, ConvertButton
@@ -74,43 +75,29 @@ class MainWindow(QMainWindow):
                 f"Selected File : {filename}"
             )
 
-    def convert(self):
+    if not self.input_file:
+        QMessageBox.warning(
+            self, "Error", "Please select a file"
+        )
+        # print("Please select an image")
+        return 
 
-        if not self.input_file:
-            QMessageBox.warning(
-                self, "Error", "Please select a file"
-            )
-            # print("Please select an image")
-            return 
+    output_dir = SaveFileDialog()
+    
+    if not output_dir:
+        return
 
-        output_dir = SaveFileDialog()
-        
-        if not output_dir:
-            return
+    conversion_type = self.conversion_box.currentText()
 
-        conversion = self.conversion_box.currentText()
-
-        try:
-            if conversion == "Image -> PDF":
-                pdf_path = os.path.join(
-                    output_dir, f"{image_name}.pdf"
+    try:
+        conversion  = ConversionService.convert(self, input_file, output_dir, conversion_type)
+            if True:
+                QMessageBox.information(
+                    self, 
+                    "Success", 
+                    f"PDF created successfully!\n\n{pdf_path}"
                 )
-
-                convert_image_to_pdf(self.input_file, pdf_path)
-                
-            elif conversion == "PDF -> Image":
-
-                convert_pdf_to_image(
-                    self.input_file,
-                    output_dir
-                )
-                if True:
-                    QMessageBox.information(
-                        self, 
-                        "Success", 
-                        f"PDF created successfully!\n\n{pdf_path}"
-                    )
-        except Exception as e:
-            QMessageBox.critical(
-                self, "Conversion Failed", str(e)
-            )
+    except Exception as e:
+        QMessageBox.critical(
+            self, "Conversion Failed", str(e)
+        )
