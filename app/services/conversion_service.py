@@ -19,11 +19,11 @@ class ConversionService:
                 output_dir, f"{image_name}.pdf"
             )
 
-            convert_image_to_pdf(self.input_file, pdf_path)
+            convert_image_to_pdf(input_file, pdf_path)
         
         elif conversion_type == "PDF -> Image":
 
-            convert_pdf_to_image(self.input_file, output_dir)
+            convert_pdf_to_image(input_file, output_dir)
 
         else:
             raise ValueError("Unsupported converison")
