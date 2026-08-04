@@ -4,7 +4,11 @@ import os
 
 class ConversionService:
 
-    def convert(self, input_file, output_dir, conversion_type):
+    def convert(
+        self,
+        input_file: str, 
+        output_dir: str, 
+        conversion_type: str) -> str:
 
         if not input_file:
             raise ValueError("Please select a file")
