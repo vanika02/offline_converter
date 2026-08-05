@@ -21,7 +21,7 @@ def get_pdf_file():
     )
     return file
 
-def SaveFileDialog():
+def save_file_dialog():
     """
     Opens a Save file dialog and return the selected PDF file path
     """
