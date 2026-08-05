@@ -90,8 +90,9 @@ class MainWindow(QMainWindow):
         
         conversion_type = self.conversion_box.currentText()
 
+        service = ConversionService()
         try:
-            output = self.ConversionService.convert(
+            output = service.convert(
                 self.input_file,
                 output_dir,
                 conversion_type
