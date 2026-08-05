@@ -2,7 +2,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxL
 from PySide6.QtCore import Qt
 from pathlib import Path
 from app.ui.layout_colorwidget import Color
-from app.utils.file_dialogs import get_image_file, save_file_dialog, get_pdf_file
+from app.utils.file_dialogs import get_image_file, get_output_directory, get_pdf_file
 from app.services.conversion_service import ConversionService
 from app.ui.widgets.title_label import TitleLabel
 from app.ui.widgets.file_label import FileLabel
@@ -82,7 +82,7 @@ class MainWindow(QMainWindow):
             )
             return 
 
-        output_dir = save_file_dialog()
+        output_dir = get_output_directory()
         if not output_dir:
             return 
         
