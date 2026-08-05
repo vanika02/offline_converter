@@ -8,7 +8,6 @@ from app.ui.widgets.title_label import TitleLabel
 from app.ui.widgets.file_label import FileLabel
 from app.ui.widgets.action_buttons import SelectButton, ConvertButton
 from app.ui.styles import TITLE_LABEL, FILE_LABEL, SELECT_BUTTON, CONVERT_BUTTON, MAIN_CONTAINER
-import os
 
 
 class MainWindow(QMainWindow):
