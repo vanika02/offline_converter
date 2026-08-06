@@ -4,6 +4,7 @@ from pathlib import Path
 from app.ui.layout_colorwidget import Color
 from app.utils.file_dialogs import get_image_file, get_output_directory, get_pdf_file
 from app.services.conversion_service import ConversionService
+from app.enums.conversion_type import ConversionType
 from app.ui.widgets.title_label import TitleLabel
 from app.ui.widgets.file_label import FileLabel
 from app.ui.widgets.action_buttons import SelectButton, ConvertButton
@@ -59,7 +60,9 @@ class MainWindow(QMainWindow):
         self.convert_btn.clicked.connect(self.convert)
 
     def select_file(self):
-        conversion = self.conversion_box.currentText()
+        conversion = ConversionType(
+            self.conversion_box.currentText()
+        )
 
         if conversion == "Image -> PDF":
             self.input_file = get_image_file()
