@@ -1,6 +1,6 @@
 from app.convertors.image_to_pdf import convert_image_to_pdf
 from app.convertors.pdf_to_image import convert_pdf_to_image
-from app.conversion_type import ConversionType
+from app.enums.conversion_type import ConversionType
 import os
 
 class ConversionService:
