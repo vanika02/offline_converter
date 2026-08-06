@@ -24,24 +24,11 @@ class ConversionService:
         if not output_dir:
             raise ValueError("No output directory selected")
         
-        image_name = os.path.basename(input_file)[0]
+        converter = self._dispatch.get(conversion_type)
 
-        if conversion_type == ConversionType.IMG_TO_PDF:
-            pdf_path = os.path.join(
-                output_dir, f"{image_name}.pdf"
-            )
-
-            convert_image_to_pdf(input_file, pdf_path)
-
-            return pdf_path
+        if converter is None:
+            raise ValueError("Unsupported conversion type")
         
-        elif conversion_type == ConversionType.PDF_TO_IMAGE:
-
-            convert_pdf_to_image(input_file, output_dir)
-
-            return output_dir
-
-        else:
-            raise ValueError("Unsupported converison")
+        return converter(input_file, output_dir)
 
 
