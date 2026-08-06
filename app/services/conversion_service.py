@@ -5,11 +5,18 @@ import os
 
 class ConversionService:
 
+    def __init__(self):
+
+        self._dispatch = {
+            ConversionType.IMG_TO_PDF: convert_image_to_pdf,
+            ConversionType.PDF_TO_IMAGE: convert_pdf_to_image
+        }
+
     def convert(
         self,
         input_file: str, 
         output_dir: str, 
-        conversion_type: str) -> str:
+        conversion_type: ConversionType) -> str:
 
         if not input_file:
             raise ValueError("Please select a file")
@@ -19,8 +26,7 @@ class ConversionService:
         
         image_name = os.path.basename(input_file)[0]
 
-        enum_conversion = ConversionService()
-        if conversion_type == enum_conversion.IMG_TO_PDF:
+        if conversion_type == ConversionType.IMG_TO_PDF:
             pdf_path = os.path.join(
                 output_dir, f"{image_name}.pdf"
             )
@@ -29,7 +35,7 @@ class ConversionService:
 
             return pdf_path
         
-        elif conversion_type == enum_conversion.PDF_TO_IMAGE:
+        elif conversion_type == ConversionType.PDF_TO_IMAGE:
 
             convert_pdf_to_image(input_file, output_dir)
 
