@@ -64,6 +64,15 @@ class MainWindow(QMainWindow):
             self.reset_selected_file
         )
 
+    def current_conversion(self) -> ConversionType:
+        """
+        Returns the currently selected conversion type
+        """
+        return ConversionType(
+            self.conversion_box.currentText()
+        )
+
+        
     def select_file(self):
         conversion = ConversionType(
             self.conversion_box.currentText()
