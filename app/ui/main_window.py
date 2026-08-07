@@ -17,6 +17,7 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         self.input_file = None
+        self.conversion_service = ConversionService()
 
         self.setWindowTitle("Offline Converter")
         self.resize(500, 350)
