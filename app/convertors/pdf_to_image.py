@@ -1,28 +1,30 @@
 from PIL import Image
 from pdf2image import convert_from_path
 
-def convert_pdf_to_image(input_file: str, output_dir: str) -> str:
-    """
-    Convert every page of a PDF to PNG image.
+class PdfToImageConverter(BaseConverter):
 
-    Args:
-        input_file: Path to the input PDF.
-        output_dir: Directory where the images will be saved.
+    def convert(input_file: str, output_dir: str) -> str:
+        """
+        Convert every page of a PDF to PNG image.
 
-    Returns:
-        A list containing the paths of all generated images.
-    """
+        Args:
+            input_file: Path to the input PDF.
+            output_dir: Directory where the images will be saved.
 
-    pdf_name = Path(input_file).stem
-    pages = convert_from_path(input_file)
+        Returns:
+            A list containing the paths of all generated images.
+        """
 
-    output_files = []
+        pdf_name = Path(input_file).stem
+        pages = convert_from_path(input_file)
 
-    for index, page in enumerate(pages, start=1):
-        output_path = Path(output_dir) / f"{pdf_name}_page_{index}.png"
+        output_files = []
 
-        page.save(output_path, "PNG")
+        for index, page in enumerate(pages, start=1):
+            output_path = Path(output_dir) / f"{pdf_name}_page_{index}.png"
 
-        output_files.append(str(output_path))
+            page.save(output_path, "PNG")
 
-    return output_files
+            output_files.append(str(output_path))
+
+        return output_files

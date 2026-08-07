@@ -5,7 +5,6 @@ import img2pdf
 
 class ImageToPdfConverter(BaseConverter):
 
-
     def convert(input_file: str, output_dir: str) -> str:
         """
         Convert an image to PDF.
