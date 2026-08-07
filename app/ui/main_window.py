@@ -22,15 +22,15 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Offline Converter")
         self.resize(500, 350)
 
-        # title
+        # widgets
         self.title_label = TitleLabel()
-
-        # file selection info
         self.file_label = FileLabel()
 
-        # comboBox
         self.conversion_box = QComboBox()
-        self.conversion_box.addItems(["Image -> PDF", "PDF -> Image"])
+        
+        # Populate combo box from enum
+        for conversion in ConversionType:
+            self.conversion_box.addItem(conversion.value)
 
         #buttons
         self.select_btn = SelectButton()
