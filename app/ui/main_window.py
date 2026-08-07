@@ -60,7 +60,7 @@ class MainWindow(QMainWindow):
         # signals
         self.select_btn.clicked.connect(self.select_file)
         self.convert_btn.clicked.connect(self.convert)
-        self.conversion_box.currentIndexChanges.connect(
+        self.conversion_box.currentIndexChanged.connect(
             self.reset_selected_file
         )
 
