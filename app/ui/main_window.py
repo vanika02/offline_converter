@@ -80,15 +80,14 @@ class MainWindow(QMainWindow):
         self.input_file = None
         self.file_label.setText("No file selected")
 
-    def select_file(self):
-        conversion = ConversionType(
-            self.conversion_box.currentText()
-        )
 
-        if conversion == "Image -> PDF":
+    def select_file(self):
+        conversion = self.current_conversion()
+
+        if conversion == ConversionType.IMG_TO_PDF:
             self.input_file = get_image_file()
 
-        elif conversion == "PDF -> Image":
+        elif conversion == ConversionType.PDF_TO_IMAGE:
             self.input_file = get_pdf_file()
         
         if self.input_file:
