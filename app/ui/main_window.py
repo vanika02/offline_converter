@@ -44,7 +44,6 @@ class MainWindow(QMainWindow):
 
         #layout
         layout = QVBoxLayout()
-
         layout.addWidget(self.title_label)
         layout.addWidget(self.file_label)
         layout.addWidget(self.conversion_box)
@@ -54,11 +53,16 @@ class MainWindow(QMainWindow):
         # central widget
         container = QWidget()
         container.setLayout(layout)
-        self.setCentralWidget(container)
         container.setStyleSheet(MAIN_CONTAINER)
 
+        self.setCentralWidget(container)
+
+        # signals
         self.select_btn.clicked.connect(self.select_file)
         self.convert_btn.clicked.connect(self.convert)
+        self.conversion_box.currentIndexChanges.connect(
+            self.reset_selected_file
+        )
 
     def select_file(self):
         conversion = ConversionType(
