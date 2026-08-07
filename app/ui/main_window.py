@@ -106,12 +106,10 @@ class MainWindow(QMainWindow):
             return 
 
         output_dir = get_output_directory()
+
         if not output_dir:
             return 
         
-        conversion_type = self.conversion_box.currentText()
-
-        service = ConversionService()
         try:
             output = service.convert(
                 self.input_file,
