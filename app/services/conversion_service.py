@@ -8,8 +8,8 @@ class ConversionService:
     def __init__(self):
 
         self._dispatch = {
-            ConversionType.IMG_TO_PDF: convert_image_to_pdf,
-            ConversionType.PDF_TO_IMAGE: convert_pdf_to_image
+            ConversionType.IMG_TO_PDF: convert_image_to_pdf(),
+            ConversionType.PDF_TO_IMAGE: convert_pdf_to_image()
         }
 
     def convert(
