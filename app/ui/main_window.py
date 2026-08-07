@@ -72,7 +72,14 @@ class MainWindow(QMainWindow):
             self.conversion_box.currentText()
         )
 
-        
+    def reset_selected_file(self):
+        """
+        Clears the previously selected file whenever the conversation type changes.
+        """
+
+        self.input_file = None
+        self.file_label.setText("No file selected")
+
     def select_file(self):
         conversion = ConversionType(
             self.conversion_box.currentText()
