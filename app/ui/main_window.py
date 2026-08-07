@@ -111,15 +111,22 @@ class MainWindow(QMainWindow):
             return 
         
         try:
-            output = service.convert(
+            output_files = self.conversion_service.convert(
                 self.input_file,
                 output_dir,
-                conversion_type
+                self.current_conversion()
             )
+
+            if isinstance(output_files, list):
+                message = "\n".join(output_files)
+            else:
+                message = output_files
+
+
             QMessageBox.information(
                 self,
                 "Success",
-                f"Conversion completed successfully.\n\n{output}"
+                f"Conversion completed successfully.\n\n{message}"
             )
         except Exception as e:
             QMessageBox.critical(
