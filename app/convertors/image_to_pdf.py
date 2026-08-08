@@ -2,8 +2,11 @@ from pathlib import Path
 
 from PIL import Image
 import img2pdf
-
+import logging
 from app.convertors.base_converter import BaseConverter
+
+
+logger = logging.getLogger(__name__)
 
 class ImageToPdfConverter(BaseConverter):
 
@@ -27,5 +30,16 @@ class ImageToPdfConverter(BaseConverter):
         
         with open(output_path, "wb") as file:
             file.write(pdf_bytes)
+        
+        logger.info(
+            "Conversion completed successfully: %s",
+            output_path,
+        )
+
+        logger.error(
+            "Conversion failed",
+            exec_info=True
+        )
+
 
         return str(output_path)

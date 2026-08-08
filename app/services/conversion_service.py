@@ -50,13 +50,3 @@ class ConversionService:
 
         return converter.convert(input_file, output_dir)
 
-        logger.info(
-            "Conversion completed successfully: %s",
-            output_files,
-        )
-
-        logger.error(
-            "Conversion failed",
-            "exec_info=True"
-        )
-

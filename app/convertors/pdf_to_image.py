@@ -1,7 +1,9 @@
 from PIL import Image
 from pdf2image import convert_from_path
-
+import logging
 from app.convertors.base_converter import BaseConverter
+
+logger = logging.getLogger(__name__)
 
 class PdfToImageConverter(BaseConverter):
 
@@ -29,4 +31,13 @@ class PdfToImageConverter(BaseConverter):
 
             output_files.append(str(output_path))
 
+        logger.info(
+            "Conversion completed successfully: %s",
+            output_files,
+        )
+
+        logger.error(
+            "Conversion failed",
+            exec_info=True
+        )
         return output_files
