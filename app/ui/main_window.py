@@ -1,14 +1,28 @@
-from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxLayout, QPushButton, QMessageBox, QComboBox
-from PySide6.QtCore import Qt
 from pathlib import Path
-from app.ui.layout_colorwidget import Color
-from app.utils.file_dialogs import get_image_file, get_output_directory, get_pdf_file
-from app.services.conversion_service import ConversionService
+from PySide6.QtWidgets import (
+    QMainWindow,
+    QWidget,
+    QVBoxLayout, 
+    QMessageBox, 
+    QComboBox
+)
 from app.enums.conversion_type import ConversionType
-from app.ui.widgets.title_label import TitleLabel
-from app.ui.widgets.file_label import FileLabel
+from app.services.conversion_service import ConversionService
+from app.ui.styles import (
+    TITLE_LABEL, 
+    FILE_LABEL, 
+    SELECT_BUTTON, 
+    CONVERT_BUTTON, 
+    MAIN_CONTAINER
+)
 from app.ui.widgets.action_buttons import SelectButton, ConvertButton
-from app.ui.styles import TITLE_LABEL, FILE_LABEL, SELECT_BUTTON, CONVERT_BUTTON, MAIN_CONTAINER
+from app.ui.widgets.file_label import FileLabel
+from app.ui.widgets.title_label import TitleLabel
+from app.utils.file_dialogs import (
+    get_image_file, 
+    get_output_directory, 
+    get_pdf_file
+)
 
 
 class MainWindow(QMainWindow):
