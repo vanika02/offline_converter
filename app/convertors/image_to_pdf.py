@@ -3,6 +3,8 @@ from pathlib import Path
 from PIL import Image
 import img2pdf
 
+from app.convertors.base_converter import BaseConverter
+
 class ImageToPdfConverter(BaseConverter):
 
     def convert(input_file: str, output_dir: str) -> str:
