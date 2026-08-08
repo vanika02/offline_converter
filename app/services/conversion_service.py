@@ -24,11 +24,11 @@ class ConversionService:
         if not output_dir:
             raise ValueError("No output directory selected")
         
-        converter = self._dispatch.get[conversion_type]
+        converter = self._dispatch[conversion_type]
 
         if converter is None:
             raise ValueError("Unsupported conversion type")
         
-        return converter(input_file, output_dir)
+        return converter.convert(input_file, output_dir)
 
 

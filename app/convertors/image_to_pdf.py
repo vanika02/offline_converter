@@ -7,7 +7,7 @@ from app.convertors.base_converter import BaseConverter
 
 class ImageToPdfConverter(BaseConverter):
 
-    def convert(input_file: str, output_dir: str) -> str:
+    def convert(self, input_file: str, output_dir: str) -> str:
         """
         Convert an image to PDF.
 
