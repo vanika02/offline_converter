@@ -1,6 +1,8 @@
 from PIL import Image
 from pdf2image import convert_from_path
 
+from app.convertors.base_converter import BaseConverter
+
 class PdfToImageConverter(BaseConverter):
 
     def convert(input_file: str, output_dir: str) -> str:
