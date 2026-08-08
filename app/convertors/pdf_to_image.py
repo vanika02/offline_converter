@@ -20,25 +20,34 @@ class PdfToImageConverter(BaseConverter):
             A list containing the paths of all generated images.
         """
 
-        pdf_name = Path(input_file).stem
-        pages = convert_from_path(input_file)
+        try:
 
-        output_files = []
+            pdf_name = Path(input_file).stem
 
-        for index, page in enumerate(pages, start=1):
-            output_path = Path(output_dir) / f"{pdf_name}_page_{index}.png"
 
-            page.save(output_path, "PNG")
+            logger.info(
+                "Starting PDF to image conversion: %s",
+                input_file,
+            )
 
-            output_files.append(str(output_path))
+            pages = convert_from_path(input_file)
 
-        logger.info(
-            "Conversion completed successfully: %s",
-            output_files,
-        )
+            output_files = []
 
-        logger.error(
-            "Conversion failed",
-            exec_info=True
-        )
-        return output_files
+            for index, page in enumerate(pages, start=1):
+                output_path = Path(output_dir) / f"{pdf_name}_page_{index}.png"
+
+                page.save(output_path, "PNG")
+
+                output_files.append(str(output_path))
+
+            logger.info(
+                "Conversion completed successfully: %s",
+                output_files,
+            )
+        
+            return output_files
+
+        except Exception:
+            logger.exception("PDF to image conversion failed")
+            raise
