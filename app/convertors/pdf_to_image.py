@@ -1,4 +1,5 @@
 from PIL import Image
+from pathlib import Path
 from pdf2image import convert_from_path
 import logging
 from app.convertors.base_converter import BaseConverter
